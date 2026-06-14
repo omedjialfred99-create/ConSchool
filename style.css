@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+body{
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: solid;
+    justify-content: center;
+    padding: 0;
+    margin: auto;
+}
+/* Style pour la section d'accueil */
+.accueil{
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+/* Style pour la barre de navigation */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #b7b0db;
+    position: sticky;
+    top: 0;/*pour que la barre de navigation reste en haut lors du défilement*/
+    z-index: 1000;
+}
+/* Style pour les éléments de navigation */
+.nav-items{
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+.logo{
+    color: rgb(65, 35, 142);
+}
+
+.logo-span{
+    font-size: 4px;
+    color: rgb(74, 73, 73);
+}
+
+ul{
+       list-style: none;
+       display: flex;
+       border: 10px;
+       border-radius: 10px;
+     }
+     /* Éléments de liste */
+       ul li{
+       margin-right: 30px;
+    }
+.nav-items button{
+    padding: 10px 20px;
+    background-color: rgb(65, 35, 142);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nav-items button.hidden{
+       background-color: transparent;
+       border-color: #fff;
+}
+ button{
+    padding: 10px 20px;
+    background-color: rgb(65, 35, 142);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

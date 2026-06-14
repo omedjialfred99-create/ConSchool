@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style3.css">
+    <script src="aide.js"></script>
+    <title>Decouverte</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h2>ConSchool</h2>
+        </div>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#index.html">Accueil</a></li>
+                <li><a href="#Connection.html">Connexion</a></li>
+                <li><a href="#Aide.html">À propos</a></li>
+            </ul>
+        </div>
+    </nav>
+    <aside>
+        <div class="help-section">
+  <div class="help-header">
+    <h2>Centre de Découverte & Aide</h2>
+    <p>Trouvez des réponses rapides pour maîtriser la gestion financière de ConSchool.</p>
+  </div>
+
+  <!-- Système d'onglets pour basculer selon le profil -->
+  <div class="tabs-container">
+    <button class="tab-btn active" data-tab="admin">Espace Administration</button>
+    <button class="tab-btn" data-tab="parents">Espace Parents & Étudiants</button>
+  </div>
+
+  <!-- CONTENU : VUE ADMINISTRATION -->
+  <div id="admin" class="tab-content active">
+    
+    <div class="accordion-item">
+      <button class="accordion-header">Comment configurer vos frais de scolarité ? <span class="icon">+</span></button>
+      <div class="accordion-body">
+        <p>Rendez-vous dans vos paramètres financiers pour définir vos grilles tarifaires (par classe, niveau ou option). Le système générera automatiquement les factures globales pour l'année en une seule fois.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">Suivre la santé financière en un coup d'œil <span class="icon">+</span></button>
+      <div class="accordion-body">
+        <p>Votre tableau de bord centralise les paiements reçus, les promesses de virement et les retards. Utilisez les filtres avancés pour exporter vos rapports financiers au format Excel ou PDF.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">Automatiser les rappels de paiement <span class="icon">+</span></button>
+      <div class="accordion-body">
+        <p>Plus besoin de courir après les relances manuelles. Activez l'envoi automatique de notifications par e-mail ou SMS directement depuis l'onglet des impayés pour alerter les familles en retard.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTENU : VUE PARENTS / ÉTUDIANTS -->
+  <div id="parents" class="tab-content">
+    
+    <div class="accordion-item">
+      <button class="accordion-header">Comment régler vos frais de scolarité en ligne ? <span class="icon">+</span></button>
+      <div class="accordion-body">
+        <p>Cliquez sur le bouton "Payer ma facture", choisissez votre mode de règlement sécurisé (Carte bancaire, Mobile Money ou Virement) et recevez instantanément votre reçu officiel par e-mail.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">Consulter votre calendrier d'échéances <span class="icon">+</span></button>
+      <div class="accordion-body">
+        <p>Accédez à l'onglet "Échéancier" pour voir vos prochaines mensualités à venir. Cela vous permet de planifier votre budget familial en toute sérénité, sans mauvaise surprise.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">Télécharger vos reçus et attestations <span class="icon">+</span></button>
+      <div class="accordion-body">
+        <p>Besoin d'un justificatif pour votre employeur ou pour les impôts ? Retrouvez l'historique complet de vos paiements passés et téléchargez vos documents officiels signés en un clic.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+    </aside>
+    <footer>footer</footer>
+</body>
+</html>

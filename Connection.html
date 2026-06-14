@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>connection page</title>
+</head>
+<body>
+    <div class="container" id="container">
+        
+        <div class="form-container sign-up">
+            <form>
+                <h1>Crée un compte</h1>
+                <span>Te connecter via</span><!--un message un peu comme un paragraph <p>-->
+                <div class="social-icons">
+                    <a href="http://accounts.google.com/" class="icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="http://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="http://www.instagram.com/" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="http://github.com/" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="http://www.linkedin.com/" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>ou utilise tes coordonnées</span>
+                <input type="text" placeholder="Nom et prenom">
+                <input type="email" placeholder="Email"> 
+                <div class="password-container">   
+                    <input type="password" placeholder="Mot de passe">
+                    <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+                </div>
+                <button type="button">Créer !</button>
+            </form>
+        </div>
+
+        <!--Tableaux de connection -->
+        <div class="form-container sign-in">
+            <form>
+                <h1>Connection</h1>
+                <div class="social-icons">
+                    <a href="http://accounts.google.com/" class="icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="http://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="http://www.instagram.com/" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="http://github.com/" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="http://www.linkedin.com/" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Utilise ton e-mail</span>
+                <input type="email" placeholder="Email">
+                <div class="password-container">
+                    <input type="password" placeholder="Mot de passe">
+                    <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+                </div>
+                <a href="http://www.google.com/">Mot de passe oublié ?</a>
+                <button type="button">Se connecter</button>
+            </form>
+        </div>
+
+        <!--Messerie dans la bulle bleue-->
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Bienvenue sur ConShool!</h1>
+                    <p>Utilise tes coordonées pour bénéficier des nos services</p>
+                    <button class="hidden" id="login">Se connecter</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Déjà inscrit ?</h1>
+                    <p>Connecte-toi vite pour accéder à ton tableau de bord</p>
+                    <button class="hidden" id="register">S'inscrire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

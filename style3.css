@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar sidebar"
+    "sidebar footer";
+}
+nav{
+    top: 0;
+    position: sticky;
+    grid-area: navbar;
+    background-color: #b7b0db;
+    color: #333;
+    padding: 1em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: sticky;
+    z-index: 999;
+}
+.nav-container{
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+nav ul li a:hover{
+    color:  rgb(65, 35, 142);
+}
+aside{
+    top: 0;
+    grid-area: sidebar;
+    background-color: gray;
+}
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+    background: #333;
+    color: #fff;
+    padding: 2em;
+}
+
+
+:root {
+  --primary-color: #4f46e5; /* Violet/Bleu moderne */
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --bg-light: #f9fafb;
+  --border-color: #e5e7eb;
+}
+
+.help-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.help-header h2 {
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.help-header p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Onglets */
+.tabs-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+}
+
+.tab-btn:hover {
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  background-color: #eef2ff;
+}
+
+/* Contenu des onglets */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Accordéon */
+.accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: #ffffff;
+  transition: box-shadow 0.2s ease;
+}
+
+.accordion-item:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Classe ajoutée en JS quand l'accordéon est ouvert */
+.accordion-item.open .accordion-body {
+  max-height: 200px; /* Ajuste selon la taille de ton texte */
+  padding-bottom: 1.2rem;
+}
+
+.accordion-item.open .icon {
+  transform: rotate(45deg);
+  color: var(--primary-color);
+}
+
+.icon {
+  transition: transform 0.2s ease;
+  font-weight: bold;
+}
+
+
+@media (min-width: 320px){
+    body{
+        grid-template-areas: 
+        "navbar navbar"
+        "sidebar sidebar"
+        "footer footer"
+        ;
+    }
+}

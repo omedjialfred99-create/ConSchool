@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Page vitrine</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>ConSchool</h1>
+            <span>Take control of your school</span>
+        </div>
+
+        <ul class="nav-items">
+            <li><button class="btn" type="button" id="connect-btn">Se connecter</button></li>
+        </ul>
+    </nav>
+
+    <form>
+        <section class="accueil">
+            <h1>Bienvenue sur ConSchool</h1>
+            <p>ConSchool est une plateforme de gestion scolaire conçue pour simplifier les tâches administratives et améliorer l'expérience éducative. Notre solution tout-en-un offre des fonctionnalités avancées pour la gestion des étudiants, des enseignants, des cours et bien plus encore.</p>
+            <br>
+            <button class="btn" type="button" id="discover-btn">Découvrez nos services</button>
+            <div class="imag-container">
+                 <img src="school.png" alt="Image de l'école" width="70%" height="400px" style="text-align: center;" >
+            </div>
+        </section>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const connectBtn = document.getElementById('connect-btn');
+            const discoverBtn = document.getElementById('discover-btn');
+
+            if (connectBtn) {
+                connectBtn.addEventListener('click', () => {
+                    window.location.href = 'Connection.html';
+                });
+            }
+
+            if (discoverBtn) {
+                discoverBtn.addEventListener('click', () => {
+                    window.location.href = 'decouvert.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
