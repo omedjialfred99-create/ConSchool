@@ -184,6 +184,22 @@ footer{
   font-weight: bold;
 }
 
+.footer-social{
+  padding: 10px;
+  margin: 10px;
+  border: solid #4b5563;
+  border-radius: 15px;
+  text-align: center;
+}
+.social-icons{
+  margin: 10px;
+  padding: 10px;
+}
+.social-icons a{
+  margin: 10px;
+  padding: 10px;
+  color: black;
+}
 
 @media (min-width: 320px){
     body{

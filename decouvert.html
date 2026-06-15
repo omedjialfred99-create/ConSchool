@@ -87,6 +87,21 @@
   </div>
 </div>
     </aside>
-    <footer>footer</footer>
+    <footer>
+        <p>© <span id="year"></span> ConSchool. Tous droits réservés.</p>
+        <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+        <div class="footer-social">
+             <h3>Nous suivre sur</h3>
+        <div class="social-icons">
+                    <a href="http://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+                    <a href="https://www.instagram.com/conschool_tech?igsh=YmYzYnNuYnNkM2Rw" class="icon"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/alfred-omedji-682490348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="icon">
+                      <i class="fa-brands fa-linkedin-in fa-xl"></i></a>
+                </div>
+        </div>
+  
+    </footer>
 </body>
 </html>
