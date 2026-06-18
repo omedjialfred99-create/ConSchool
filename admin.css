@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10px;
+    grid-template-areas: 
+    
+      'nav nav'
+      'h h'
+      'sibebar m'
+      'sidebar m'
+      'f f'
+    ;
+}
