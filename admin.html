@@ -1,16 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConSchool Admin - Gestion Financière</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="admin.css">
-    <title>Admin</title>
 </head>
 <body>
-    <nav></nav>
-    <header></header>
-    <aside></aside>
-    <main></main>
-    <footer></footer>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>ConSchool <span>Admin</span></h2>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar"><i class="fas fa-user-tie"></i></div>
+                <div class="user-info">
+                    <h4>M. OMEDJI</h4>
+                    <small>Directeur Financier</small>
+                </div>
+            </div>
+            <nav>
+                <ul class="sidebar-menu">
+                    <li class="active"><a href="#"><i class="fas fa-chart-pie"></i> Vue Générale</a></li>
+                    <li><a href="#"><i class="fas fa-credit-card"></i> Suivi Paiements</a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i> Rappels Échéances</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+            </div>
+        </aside>
+
+        <header class="topbar">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchStudent" placeholder="Rechercher un étudiant...">
+            </div>
+            <div class="date-info">
+                <i class="far fa-calendar-alt"></i> <span id="currentDate"></span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Tableau de bord financier</h1>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Gestion et suivi des scolarités segmentés par classe.</p>
+            </div>
+
+            <section class="finance-cards">
+                <div class="card">
+                    <div class="card-header-box">
+                        <span class="card-title">Taux de Recouvrement</span>
+                        <i class="fas fa-percentage card-icon icon-blue"></i>
+                    </div>
+                    <span class="card-amount" id="recoveryRate">75%</span>
+                    <span class="card-status" style="color: var(--color-success)"><i class="fas fa-arrow-up"></i> Optimal</span>
+                </div>
+                <div class="card">
+                    <div class="card-header-box">
+                        <span class="card-title">Total Encaissé</span>
+                        <i class="fas fa-wallet card-icon icon-green"></i>
+                    </div>
+                    <span class="card-amount" id="totalEncaisse">12 450 CDF</span>
+                    <span class="card-status" style="color: var(--text-light)">Trimestre en cours</span>
+                </div>
+                <div class="card">
+                    <div class="card-header-box">
+                        <span class="card-title">Impayés Restants</span>
+                        <i class="fas fa-exclamation-triangle card-icon icon-red"></i>
+                    </div>
+                    <span class="card-amount" id="totalImpayes" style="color: var(--color-danger)">3 150 CDF</span>
+                    <span class="card-status" style="color: var(--color-warning)"><i class="fas fa-clock"></i> Relances actives</span>
+                </div>
+            </section>
+
+            <div class="management-section">
+                
+                <section class="table-container">
+                    <div class="table-header-flex">
+                        <h3>Suivi de la classe :</h3>
+                        <select id="classFilter" class="class-selector">
+                            <option value="7ème année">7ème année</option>
+                            <option value="8ème année">8ème année</option>
+                            <option value="1ère Humanité">1ère Humanité</option>
+                            <option value="2ème Humanité">2ème Humanité</option>
+                            <option value="3ème Humanité">3èmé Humanité</option>
+                            <option value="4ème Humanité">4ème Humanité</option>
+                        </select>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Étudiant</th>
+                                <th>Échéance</th>
+                                <th>Montant Dû</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody">
+                            </tbody>
+                    </table>
+                </section>
+
+                <section class="form-container">
+                    <h3>Enregistrer un paiement</h3>
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label for="studentName">Nom de l'étudiant</label>
+                            <input type="text" id="studentName" placeholder="Ex: Alfred OMEDJI" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentClass">Assigner à la classe</label>
+                            <select id="studentClass">
+                                <option value="7ème année">7ème année</option>
+                                <option value="8ème année">8ème année</option>
+                                <option value="1ère Humanité">1ère Humanité</option>
+                                <option value="2ème Humanité">2ème Humanité</option>
+                                <option value="3ème Hmanité">3ème Humanité</option>
+                                <option value="4ème Humanité">4ème Humanité</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentAmount">Montant versé (CDF)</label>
+                            <input type="number" id="paymentAmount" placeholder="Ex: 150" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentStatus">Statut final</label>
+                            <select id="paymentStatus">
+                                <option value="paid">Payé (Scolarité réglée)</option>
+                                <option value="partial">Partiel (Reste à charge)</option>
+                                <option value="unpaid">En retard (Impayé)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-check"></i> Enregistrer et Classer
+                        </button>
+                    </form>
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2026 ConSchool. Tous droits réservés.</p>
+            <p>Version 1.1.0 (Segmentation par Classe)</p>
+            <p>Travail présenter par OMEDJI OSOMBO ELIEZER L1 FASI UNIVERSITE PROTESTANTE AU CONGO 2025-2026</p>
+        </footer>
+
+    </div>
+
+    <script src="admin.js"></script>
 </body>
 </html>

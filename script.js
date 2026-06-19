@@ -50,3 +50,31 @@ document.addEventListener('DOMContentLoaded', () => {
     setupPasswordToggle('.toggle-password-login', '.password-container-login input');
 });
   
+//logique de connection
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Bloque le rechargement
+
+    // Récupération dynamique basée sur ton HTML actuel
+    const emailField = document.querySelector('input[type="email"]');
+    const passwordField = document.getElementById('password');
+
+    const identifiant = emailField.value.trim().toLowerCase();
+    const password = passwordField.value;
+
+    // Validation rapide
+    if (identifiant === "" || password === "") {
+        alert("Veuillez remplir tous les champs.");
+        return;
+    }
+
+    // Routage de la maquette ConSchool
+    if (identifiant.includes('admin')) {
+        window.location.href = "index.html";
+    } 
+    else if (identifiant.includes('@gmail.com') || identifiant.includes('@')) {
+        window.location.href = "student.html";
+    } 
+    else {
+        alert("Identifiants non reconnus pour la démo.");
+    }
+});

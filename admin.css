@@ -1,17 +1,321 @@
-*{
-    padding: 0;
-    margin: 0;
+:root {
+    --bg-primary: #f4f6f9;
+    --bg-sidebar: #1e293b;
+    --text-main: #334155;
+    --text-light: #94a3b8;
+    --white: #ffffff;
+    --color-success: #10b981;
+    --bg-success: #d1fae5;
+    --color-danger: #ef4444;
+    --bg-danger: #fee2e2;
+    --color-warning: #f59e0b;
+    --bg-warning: #fef3c7;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
 }
-body{
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    overflow: hidden;
+}
+
+.dashboard-container {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 10px;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 70px 1fr 40px;
     grid-template-areas: 
+        "sidebar topbar"
+        "sidebar main"
+        "sidebar footer";
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--bg-sidebar);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.sidebar-brand { margin-bottom: 2rem; }
+.sidebar-brand h2 { font-size: 1.4rem; font-weight: 700; }
+.sidebar-brand span { color: var(--primary); }
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #334155;
+    margin-bottom: 1.5rem;
+}
+
+.user-avatar {
+    font-size: 1.2rem;
+    background: #334155;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+}
+
+.user-info h4 { font-size: 0.9rem; }
+.user-info small { color: var(--text-light); font-size: 0.75rem; }
+
+.sidebar-menu { list-style: none; }
+.sidebar-menu li { margin-bottom: 0.5rem; }
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.sidebar-menu a i { width: 20px; font-size: 1.1rem; }
+.sidebar-menu li.active a, .sidebar-menu a:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.sidebar-footer { margin-top: auto; border-top: 1px solid #334155; padding-top: 1rem; }
+.logout-btn { display: flex; align-items: center; gap: 1rem; color: #ef4444; text-decoration: none; padding: 0.8rem 1rem; }
+
+/* TOPBAR */
+.topbar {
+    grid-area: topbar;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.search-box { position: relative; display: flex; align-items: center; }
+.search-icon { position: absolute; left: 12px; color: var(--text-light); }
+.search-box input {
+    padding: 0.5rem 1rem 0.5rem 2.2rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    width: 300px;
+    outline: none;
+}
+.date-info { font-size: 0.9rem; font-weight: 500; }
+.date-info i { color: var(--primary); margin-right: 5px; }
+
+/* MAIN CONTENT */
+.main-content { grid-area: main; padding: 2rem; overflow-y: auto; }
+.page-header { margin-bottom: 2rem; }
+
+.finance-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-header-box { display: flex; justify-content: space-between; align-items: center; }
+.card-title { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; font-weight: 600; }
+.card-icon { font-size: 1.2rem; padding: 0.5rem; border-radius: 8px; }
+.icon-blue { color: var(--primary); background: #e0e7ff; }
+.icon-green { color: var(--color-success); background: var(--bg-success); }
+.icon-red { color: var(--color-danger); background: var(--bg-danger); }
+.card-amount { font-size: 1.8rem; font-weight: 700; }
+.card-status { font-size: 0.8rem; font-weight: 500; }
+
+.management-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* TABLEAU ET FILTRE DE CLASSE */
+.table-container {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.table-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.class-selector {
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--primary);
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+}
+
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 1rem; border-bottom: 1px solid #edf2f7; font-size: 0.9rem; }
+th { color: var(--text-light); font-weight: 600; }
+
+.badge { display: inline-flex; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; }
+.badge.paid { color: var(--color-success); background-color: var(--bg-success); }
+.badge.unpaid { color: var(--color-danger); background-color: var(--bg-danger); }
+.badge.partial { color: var(--color-warning); background-color: var(--bg-warning); }
+
+/* FORMULAIRE */
+.form-container {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+.form-container h3 { margin-bottom: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.form-group label { font-size: 0.85rem; font-weight: 600; color: var(--text-main); }
+.form-group input, .form-group select { padding: 0.6rem; border: 1px solid #e2e8f0; border-radius: 6px; outline: none; }
+
+.submit-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease;
+}
+.submit-btn:hover { background-color: var(--primary-hover); }
+
+.main-footer {
+    grid-area: footer;
+    background-color: var(--white);
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/*responsive pour telephon*/
+@media (max-width: 600px) {
     
-      'nav nav'
-      'h h'
-      'sibebar m'
-      'sidebar m'
-      'f f'
-    ;
+    /* 1. Déblocage du scroll vertical de la page */
+    body {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        height: auto;
+    }
+
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* 2. Menu horizontal compact en haut */
+    .sidebar { 
+        padding: 1rem; 
+    }
+    .sidebar-user, .sidebar-footer { 
+        display: none; /* Cache les détails inutiles sur mobile */
+    }
+    .sidebar-menu { 
+        display: flex; 
+        justify-content: space-between; 
+        gap: 0.5rem; 
+    }
+    .sidebar-menu a { 
+        padding: 0.6rem; 
+        font-size: 0.85rem; 
+        justify-content: center; 
+    }
+
+    /* 3. Barre de recherche et date l'un sous l'autre */
+    .topbar { 
+        flex-direction: column; 
+        gap: 0.8rem; 
+        padding: 1rem; 
+        height: auto; 
+    }
+    .search-box, .search-box input { 
+        width: 100%; 
+    }
+
+    /* 4. Le Slider horizontal pour les cartes financières */
+    .finance-cards {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important; /* Déclenche le glissement horizontal */
+        scroll-snap-type: x mandatory; /* Aimante les cartes au centre */
+        gap: 1rem;
+        padding: 0.5rem 1rem 1rem 1rem;
+        margin-left: -1rem; /* Aligne le glissement avec les bords physiques de l'écran */
+        margin-right: -1rem;
+        scrollbar-width: none; /* Cache la barre sur Firefox */
+    }
+    .finance-cards::-webkit-scrollbar {
+        display: none; /* Cache la barre sur Chrome/Safari */
+    }
+
+    .finance-cards .card {
+        min-width: 82vw; /* Laisse deviner la carte suivante pour inciter à glisser */
+        flex-shrink: 0;  /* Empêche les cartes de se faire écraser */
+        scroll-snap-align: center;
+    }
+
+    /* 5. Alignement vertical du tableau et du formulaire */
+    .management-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Protection anti-débordement pour le tableau */
+    .responsive-table {
+        overflow-x: auto;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Footer en colonne */
+    .main-footer { 
+        flex-direction: column; 
+        gap: 0.5rem; 
+        padding: 1rem; 
+        text-align: center; 
+    }
 }
