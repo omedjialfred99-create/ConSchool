@@ -20,7 +20,7 @@
     padding: 40px;
 }
 .welcome-pannel{
-    background-color: rgba(125, 17, 139, 0.954);
+    background-color: rgb(65, 35, 142);
     color: #fff;
     text-align: center;
     text-shadow: #333;
@@ -73,7 +73,7 @@
 }
 
 .input-id .btn:hover {
-    background-color: #bb81c4;
+    background-color: rgb(65, 35, 142);
 }
 @media (max-width: 600px){
     .login-container{
