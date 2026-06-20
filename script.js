@@ -1,3 +1,7 @@
+loginBtn.addEventListener("click", (event) => { // Ajoute 'event' ici
+    event.preventDefault(); // Ajoute cette ligne pour bloquer le rechargement
+    
+    const email = emailInput.value.trim();
 document.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
