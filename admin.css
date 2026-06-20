@@ -162,7 +162,7 @@ body {
     background-color: var(--white);
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(5, 4, 4, 0.374);
 }
 
 .table-header-flex {
