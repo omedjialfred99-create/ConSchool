@@ -1,27 +1,23 @@
-// On attend que le DOM soit chargé
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // Sélection des éléments
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const loginBtn = document.getElementById("btn-login");
 
-    // Fonction de connexion
     loginBtn.addEventListener("click", () => {
-        const emailValue = emailInput.value.trim();
-        const passwordValue = passwordInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
 
-        // Logique de redirection selon l'email
-        if (emailValue === "admin@ecole.com") {
-            // Redirection vers le tableau de bord admin
-            window.location.href = "admin.html";
+        // Vérification Admin
+        if (email === "admin@conschool.com" && password === "admin123") {
+            window.location.href = "admin.html"; // Redirection vers admin.html
         } 
-        else if (emailValue === "etudiant@ecole.com") {
-            // Redirection vers le tableau de bord étudiant
-            window.location.href = "student.html";
+        // Vérification Étudiant
+        else if (email === "student@conschool.com" && password === "student123") {
+            window.location.href = "student.html"; // Redirection vers student.html
         } 
+        // Message d'erreur
         else {
-            alert("Identifiants incorrects ou email non reconnu.");
+            alert("Email ou mot de passe incorrect.");
         }
     });
 });
