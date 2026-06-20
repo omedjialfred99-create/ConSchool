@@ -69,7 +69,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
 
     // Routage de la maquette ConSchool
     if (identifiant.includes('admin')) {
-        window.location.href = "index.html";
+        window.location.href = "admin.html";
     } 
     else if (identifiant.includes('@gmail.com') || identifiant.includes('@')) {
         window.location.href = "student.html";
@@ -77,4 +77,3 @@ document.querySelector('form').addEventListener('submit', function(e) {
     else {
         alert("Identifiants non reconnus pour la démo.");
     }
-});
