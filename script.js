@@ -1,25 +1,23 @@
-loginBtn.addEventListener("click", (event) => { // Ajoute 'event' ici
-    event.preventDefault(); // Ajoute cette ligne pour bloquer le rechargement
-    
-    const email = emailInput.value.trim();
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. On récupère les éléments
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
-    const loginBtn = document.getElementById("btn-login");
+    const loginBtn = document.querySelector(".btn-login"); // Utilisation de ta classe
 
-    loginBtn.addEventListener("click", () => {
+    // 2. On écoute le clic
+    loginBtn.addEventListener("click", (event) => {
+        event.preventDefault(); // Empêche le rechargement
+
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
 
-        // Vérification Admin
+        // 3. Logique de redirection
         if (email === "admin@conschool.com" && password === "admin123") {
-            window.location.href = "admin.html"; // Redirection vers admin.html
+            window.location.href = "admin.html";
         } 
-        // Vérification Étudiant
         else if (email === "student@conschool.com" && password === "student123") {
-            window.location.href = "student.html"; // Redirection vers student.html
+            window.location.href = "student.html";
         } 
-        // Message d'erreur
         else {
             alert("Email ou mot de passe incorrect.");
         }

@@ -59,7 +59,7 @@
     text-decoration: underline;
 }
 
-.input-id .btn {
+.input-id .btn-login {
     width: 100%;
     padding: 12px;
     background-color: #7a92a3; 
@@ -72,7 +72,7 @@
     margin-top: 10px;
 }
 
-.input-id .btn:hover {
+.input-id .btn-login:hover {
     background-color: rgb(65, 35, 142);
 }
 @media (max-width: 600px){
