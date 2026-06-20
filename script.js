@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Logique de redirection selon l'email
         if (emailValue === "admin@ecole.com") {
             // Redirection vers le tableau de bord admin
-            window.location.href = "admin_dashboard.html";
+            window.location.href = "admin.html";
         } 
         else if (emailValue === "etudiant@ecole.com") {
             // Redirection vers le tableau de bord étudiant
-            window.location.href = "student_dashboard.html";
+            window.location.href = "student.html";
         } 
         else {
             alert("Identifiants incorrects ou email non reconnu.");
