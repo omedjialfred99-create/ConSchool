@@ -8,46 +8,129 @@
     <title>Page vitrine</title>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <h1>ConSchool</h1>
-        </div>
+    <header>
+        <nav>
+            <div class="logo">
+                <h3>Con<span>School</span></h3>
+            </div>
 
-        <ul class="nav-items">
-            <li><button class="btn" type="button" id="connect-btn">Se connecter</button></li>
-        </ul>
-    </nav>
+            <button class="hamburger" id="hamburger" aria-label="menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
 
-    <form>
-        <section class="accueil">
-            <h1>Bienvenue sur ConSchool</h1>
-            <p>ConSchool est une plateforme de gestion scolaire conçue pour simplifier les tâches administratives et améliorer l'expérience éducative. Notre solution tout-en-un offre
-                 des fonctionnalités avancées pour la gestion financiaire des étudiants.</p>
-            <br>
-            <button class="btn" type="button" id="discover-btn">Découvrez nos services</button>
-            <div class="imag-container">
-                 <img src="schoolimge.png" alt="Image du tableau de board" width="100%" height="400px" style="text-align: center; padding: 10px; margin: 10px;" >
+            <div class="nav-items" id="nav-items">
+                   <ul>
+                       <li><a href="#accueil">Accueil</a></li>
+                       <li><a href="#services">Services</a></li>
+                       <li><a href="#à propos">À propos</a></li>
+                       <li><a href="#contact">Contact</a></li>
+                       <li class="nav-btn">
+                          <button><i class="fa-solid fa-user"></i>Connexion</button>
+                       </li>
+                   </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+          <div class="hero-container">
+            <div class="hero-text">
+                <h1>Bienvenue sur Con<span>School</span></h1>
+                <p>La plateforme tout-en-un pour gérer les finances de vos établissements et des élèves</p>
+                     <button class="btn1">Decouvrir nos services</button> 
+                     <button class="btn2">En savoir plus</button>
+            </div>
+            <div class="hero-image">
+                <img src="hero-imge.png" alt="Hero image">
+            </div>
+          </div>
+        </section>
+        <section class="services" id="services">
+            <div class="texte">
+                <h3>Nos Services</h3>
+                <p>Des solutions adaptées à tous les établissements</p>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="users">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Gestion des élèves</h3>
+                    <p>Gérez les informations des élèves en toutes simplicité.</p>
+                </div>
+                <div class="card">
+                    <div class="stat">
+                     <i class="fa-solid fa-signal"></i>
+                    </div>
+                    <h3>Statistiques</h3>
+                    <p>Suivez les performences avec des tableaux de bord détaillés</p>
+                </div>
+                <div class="card">
+                    <div class="bell">
+                      <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3>Alert</h3>
+                    <p>Soyez alerter pour une bonne organisation du planning</p>
+                </div>
             </div>
         </section>
-    </form>
+        <section class="àpropos" id="à propos">
+            <div class="propos-container">
+                <div class="sentence">
+                    <h2>À propos de Con<span>School</span></h2>
+                    <p>
+                        ConSchool est une plateforme conçue pour simplifier la gestion scolaire 
+                        et améliorer l'experience d'apprentissage.
+                    </p>
+                    <p>Notre mission est d'accompagner les établissements dans leur transformation numérique.</p>
+                </div>
+                <div class="imagepr">
+                    <img src="school_pr.png" alt="image d'une école">
+                </div>
+            </div>
+        </section>
+        <section class="contact-container" id="contact">
+            <div class="contact-text">
+                <h2>Contactez-nous</h2>
+                <p>Nous sommes là pour vous aider.</p>
+                <p>N'hésitez pas à nous contacter!</p>
+            </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const connectBtn = document.getElementById('connect-btn');
-            const discoverBtn = document.getElementById('discover-btn');
-
-            if (connectBtn) {
-                connectBtn.addEventListener('click', () => {
-                    window.location.href = 'Connection.html';
-                });
-            }
-
-            if (discoverBtn) {
-                discoverBtn.addEventListener('click', () => {
-                    window.location.href = 'decouvert.html';
-                });
-            }
-        });
-    </script>
+            <div class="contact-links">
+                <div class="card-contact">
+                <div class="mail">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                    <h4>Email</h4>
+                    <a href="httpps//omedjialfred99@gmail.com">omedjialfred99@gmail.com</a>
+                </div>
+            </div>
+            <div class="card-contact">
+                <div class="call">
+                   <i class="fa-solid fa-phone"></i>
+                </div>
+                  <h4>Téléphone</h4>
+                  <a href="#+243832524023">+243 832 524 023</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>2026 ConSchool.Tous droits réservés.</p>
+            </div>
+            <div class="mention">
+                <p>Mention légales | Confidentialité | Condition d'utilisation</p>
+            </div>
+            <div class="footer-items">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script> 
 </body>
 </html>
