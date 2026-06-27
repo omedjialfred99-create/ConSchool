@@ -46,21 +46,25 @@ nav ul li a{
    padding: 5px;
    color: #333;
 }
-nav .nav-btn button{
+.nav-btn a{
     padding: 9px;
+    text-decoration: none;
     border: none;
     border-radius: 5px;
     background-color: #2563EB;
     color: #fff;
 }
+.nav-btn a:hover{
+    transform: translateY(-8px);
+    text-decoration: none;
+    color: #b3d6f9;
+    background: #fff;
+    border: 1px solid #2563EB;
+}
 /*Nav :hover*/
 nav ul li a:hover{
      color: rgb(78, 29, 163);
      text-decoration: underline;
-}
-nav .nav-btn button:hover{
-     transform: translateY(-8px);
-     box-shadow: 0 15px 35px rgba(78, 29, 163, 0.15);
 }
 /*Main rubrique*/
 /*Prémier section*/
@@ -102,19 +106,32 @@ nav .nav-btn button:hover{
 .hero-text .btn1{
     color: #fff;
     background-color: #5e926d;
+    text-decoration: none;
     border: none;
     border-radius: 5px;
     box-shadow: 0 15px 35px rgba(78, 29, 163, 0.15);
-    padding: 10px;
+    padding: 9px;
 }
 .hero-text .btn2{
     color: #5e926d;
     background-color: #fff;
+    text-decoration: none;
     border: none;
     border-radius: 5px;
     box-shadow: 0 15px 35px rgba(78, 29, 163, 0.15);
-    padding: 10px;
+    padding: 9px;
 
+}
+.btn1:hover{
+    color: #5e926d;
+    background: #fff;
+    border: 1px solid #5e926d;
+
+}
+.btn2:hover{
+    color: #fff;
+    background: #5e926d;
+    border: 1px solid #fff;
 }
 .hero-image{
     flex: 1;
