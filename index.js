@@ -6,3 +6,4 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   menu.classList.toggle("active");
 });
+document.getElementById("year").textContent = new Date().getFullYear();

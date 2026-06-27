@@ -20,7 +20,7 @@ nav{
     top: 0;
     position: sticky;
     grid-area: navbar;
-    background-color: #b7b0db;
+    background-color: #b3d6f9;
     color: #333;
     padding: 1em;
 
@@ -183,22 +183,17 @@ footer{
   transition: transform 0.2s ease;
   font-weight: bold;
 }
-
+footer{
+  color: #bf8507;
+  background: black;
+}
 .footer-social{
-  padding: 10px;
-  margin: 10px;
-  border: solid #4b5563;
-  border-radius: 15px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
-.social-icons{
-  margin: 10px;
-  padding: 10px;
-}
-.social-icons a{
-  margin: 10px;
-  padding: 10px;
-  color: black;
+.footer-social i{
+  font-size: 1rem;
 }
 
 @media (min-width: 320px){
