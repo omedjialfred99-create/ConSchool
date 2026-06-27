@@ -107,7 +107,7 @@ nav ul li a:hover{
     color: #fff;
     background-color: #5e926d;
     text-decoration: none;
-    border: none;
+    border: 1px solid #333;
     border-radius: 5px;
     box-shadow: 0 15px 35px rgba(78, 29, 163, 0.15);
     padding: 9px;
