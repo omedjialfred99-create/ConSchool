@@ -388,18 +388,16 @@ nav ul li a:hover{
   transform: rotate(-45deg) translate(5px, -5px);
 }
 header{
-    border: 2px solid #5687f3;
     border-radius: 5px;
 }
 .hero{
     background-color: #e3f9ea;
     min-height: 50vh;
-    border: 2px solid #5e926d;
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
-    flex-direction: 1;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
@@ -422,19 +420,18 @@ header{
     margin-bottom: 10px;
 }
 .services{
-    border: 2px solid #c6d709;
+    border: none;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 .àpropos{
-    border: 2px solid #f5b6fa;
     border-radius: 5px;
 }
 .imagepr{
    display: none;
 }
 .contact-container{
-    border: 2px solid #f89fbe;
+    border: none;
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
