@@ -159,6 +159,7 @@ nav ul li a:hover{
     justify-content: center;
     text-align: center;
     gap: 20px;
+    margin: 10px;
 }
 .card{
     border: 1px solid #f0f0f0;
