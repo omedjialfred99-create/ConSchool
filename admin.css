@@ -14,6 +14,38 @@
     --primary-hover: #4338ca;
 }
 
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+.site-logo .logo-icon {
+    color: #38bdf8;
+    flex-shrink: 0;
+}
+.site-logo .logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #38bdf8, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.site-logo .logo-accent {
+    color: #a855f7;
+}
+.site-logo .logo-subtitle {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
 * {
     margin: 0;
     padding: 0;

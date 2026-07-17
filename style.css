@@ -4,6 +4,37 @@
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+.site-logo .logo-icon {
+    color: #38bdf8;
+    flex-shrink: 0;
+}
+.site-logo .logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #38bdf8, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.site-logo .logo-accent {
+    color: #a855f7;
+}
+.site-logo .logo-subtitle {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-top: 2px;
+}
 nav{
     display: flex;
     padding: 10px;
