@@ -1,17 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. On récupère les éléments
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
-    const loginBtn = document.querySelector(".btn-login"); // Utilisation de ta classe
+    const loginBtn = document.querySelector(".btn-login");
+    const passwordToggle = document.querySelector(".password-toggle");
 
-    // 2. On écoute le clic
+    if (passwordToggle) {
+        passwordToggle.addEventListener("click", () => {
+            const isPassword = passwordInput.type === "password";
+            passwordInput.type = isPassword ? "text" : "password";
+            const icon = passwordToggle.querySelector("i");
+            icon.className = isPassword ? "fa-regular fa-eye-slash" : "fa-regular fa-eye";
+            passwordToggle.setAttribute("aria-label", isPassword ? "Masquer le mot de passe" : "Afficher le mot de passe");
+        });
+    }
+
     loginBtn.addEventListener("click", (event) => {
-        event.preventDefault(); // Empêche le rechargement
+        event.preventDefault();
 
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
 
-        // 3. Logique de redirection
         if (email === "admin@conschool.com" && password === "admin123") {
             window.location.href = "admin.html";
         } 

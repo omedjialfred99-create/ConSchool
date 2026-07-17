@@ -219,6 +219,24 @@
             overflow-y: auto;
         }
 
+        .main-footer {
+            left: 280px;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.9rem 1.5rem;
+            background: rgba(2, 6, 23, 0.72);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #94a3b8;
+            font-size: 0.8rem;
+            z-index: 900;
+        }
+
         .main-header h1 {
             font-size: 2.2rem;
             font-weight: 700;
@@ -458,7 +476,14 @@
             }
 
             .main-content {
-                padding: 80px 20px 20px 20px;
+                padding: 80px 20px 95px 20px;
+            }
+
+            .main-footer {
+                left: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.9rem 1rem;
             }
 
             .card {
