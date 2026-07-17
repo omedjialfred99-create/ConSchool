@@ -373,145 +373,128 @@
             color: #94a3b8;
             line-height: 1.4;
         }
+
         /* --- Bouton Hamburger --- */
-.menu-toggle {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 12px;
-    border-radius: 8px;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1100;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
+        .menu-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 8px;
+            position: fixed;
+            top: 8px;
+            left: 15px;
+            z-index: 1100;
+            transition: background 0.3s ease, transform 0.2s ease;
+            display: none;
+        }
 
-.menu-toggle:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
+        .menu-toggle:active {
+            transform: scale(0.95);
+        }
 
-/* --- État masqué par défaut de la Sidebar (Hors-écran) --- */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 260px;
-    height: 100vh;
-    z-index: 1000;
-    transform: translateX(-100%); /* Cachée à gauche */
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
 
-/* --- État affiché de la Sidebar (Quand on clique) --- */
-.sidebar.active {
-    transform: translateX(0); /* Elle glisse et apparaît */
-}
+        /* --- Sidebar desktop/base --- */
+        .sidebar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            z-index: 1000;
+            transform: translateX(0);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-/* --- Contenu principal (Ajusté pour laisser la place au bouton) --- */
-.main-content {
-    margin-left: 0;
-    width: 100%;
-    padding: 80px 20px 20px 20px;
-}
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .main-content {
+            margin-left: 0;
+            width: 100%;
+            padding: 3rem;
+        }
+
         /* ==========================================
-   MEDIA QUERIES : RESPONSIVE DESIGN
-   ========================================== */
+           MEDIA QUERIES : RESPONSIVE DESIGN
+           ========================================== */
 
-/* Pour les smartphones (en dessous de 768px) */
-@media screen and (max-width: 768px) {
-    /* 1. On casse le split-screen pour empiler les éléments */
-    .main-wrapper { 
-        flex-direction: column;
-        height: auto;
-        min-height: 100vh;
-        padding: 20px 10px;
-    }
+        @media screen and (max-width: 768px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
 
-    /* 2. Ajustement de la section visuelle/illustration */
-    .side-panel-info {
-        width: 100%;
-        min-height: 250px; /* On réduit la hauteur pour ne pas bloquer tout l'écran */
-        padding: 20px;
-        border-radius: 15px 15px 0 0; /* On adapte les arrondis si nécessaire */
-    }
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-    /* 3. Ajustement de la section formulaire / contenu principal */
-    .side-panel-form {
-        width: 100%;
-        padding: 30px 20px;
-        border-radius: 0 0 15px 15px;
-    }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: min(280px, 85vw);
+                height: 100vh;
+                transform: translateX(-100%);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+                padding: 1.5rem 1rem;
+            }
 
-    /* 4. Optimisation de la typographie pour mobile */
-    h1 {
-        font-size: 1.8rem;
-    }
+            .sidebar.active {
+                transform: translateX(0);
+            }
 
-    h2 {
-        font-size: 1.4rem;
-    }
+            .nav-menu {
+                margin-top: 1.5rem;
+            }
 
-    /* 5. Inputs et boutons plus grands pour faciliter le clic tactile */
-    .input-field, 
-    .btn-submit {
-        padding: 14px;
-        font-size: 1rem;
-    }
+            .main-content {
+                padding: 80px 20px 20px 20px;
+            }
 
-    /* Si tu as une grille (CSS Grid) pour des cartes ou des options */
-    .grid-layout {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-        gap: 15px;
-    }
-    .bg-shapes {
-        display: none; /* On peut cacher les formes flottantes pour alléger le rendu sur mobile */
-    }
-}
-/* ==========================================
-   RUBRIQUE RESPONSIVE (ÉCRANS <= 768px)
-   ========================================== */
+            .card {
+                padding: 1.2rem;
+            }
 
-/* 1. Sur grand écran (PC) : On garde le comportement classique */
-@media screen and (min-width: 769px) {
-    .menu-toggle {
-        display: none; /* Cache le hamburger sur PC */
-    }
-    
-    .sidebar {
-        transform: translateX(0); /* Force la sidebar à rester visible */
-        position: sticky; /* Ou fixed, selon ton organisation de base */
-    }
-    
-    .main-content {
-        margin-left: 2px; /* Remet le décalage pour ne pas survoler le contenu */
-        padding-top: 20px; /* Plus besoin du gros espace du haut */
-    }
-}
+            .kpi-grid,
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
 
-/* 2. Sur petit écran (Mobile/Tablette) : On active le mode tiroir */
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Affiche le bouton hamburger */
-    }
+            .main-header h1 {
+                font-size: 1.6rem;
+            }
 
-    /* Les grilles (cartes de statut, contenu) passent sur une seule colonne */
-    .kpi-grid, 
-    .content-grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px;
-    }
+            .kpi-value {
+                font-size: 1.5rem;
+            }
 
-    /* Ajustement optionnel des textes pour les petits écrans */
-    h1 {
-        font-size: 1.6rem;
-    }
-    
-    .kpi-value {
-        font-size: 1.5rem;
-    }
-}
+            .bg-shapes {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            .sidebar {
+                position: sticky;
+                transform: translateX(0);
+            }
+
+            .main-content {
+                padding: 3rem;
+            }
+        }
