@@ -422,14 +422,6 @@
    MEDIA QUERIES : RESPONSIVE DESIGN
    ========================================== */
 
-/* Pour les tablettes et petits écrans (en dessous de 1024px) */
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 90%; /* On donne un peu plus d'espace sur les côtés */
-        max-width: 800px;
-    }
-}
-
 /* Pour les smartphones (en dessous de 768px) */
 @media screen and (max-width: 768px) {
     /* 1. On casse le split-screen pour empiler les éléments */
@@ -476,18 +468,8 @@
         grid-template-columns: 1fr; /* Une seule colonne sur mobile */
         gap: 15px;
     }
-}
-
-/* Ajustements extrêmes pour les très petits écrans (en dessous de 480px) */
-@media screen and (max-width: 480px) {
-    .side-panel-form {
-        padding: 20px 15px;
-    }
-    
-    /* Effet glassmorphic : on peut réduire légèrement le flou ou l'opacité 
-       sur très vieux mobiles si les performances ralentissent */
-    .glass-card {
-        backdrop-filter: blur(8px);
+    .bg-shapes {
+        display: none; /* On peut cacher les formes flottantes pour alléger le rendu sur mobile */
     }
 }
 /* ==========================================
@@ -506,7 +488,7 @@
     }
     
     .main-content {
-        margin-left: 260px; /* Remet le décalage pour ne pas survoler le contenu */
+        margin-left: 2px; /* Remet le décalage pour ne pas survoler le contenu */
         padding-top: 20px; /* Plus besoin du gros espace du haut */
     }
 }
