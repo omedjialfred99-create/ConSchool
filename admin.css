@@ -1,17 +1,19 @@
 :root {
-    --bg-primary: #f4f6f9;
-    --bg-sidebar: #1e293b;
-    --text-main: #334155;
+    --bg-primary: #f8fafc;
+    --bg-sidebar: #0f172a;
+    --text-main: #1e293b;
     --text-light: #94a3b8;
     --white: #ffffff;
-    --color-success: #10b981;
-    --bg-success: #d1fae5;
+    --color-success: #4f46e5;
+    --bg-success: #e0e7ff;
     --color-danger: #ef4444;
     --bg-danger: #fee2e2;
-    --color-warning: #f59e0b;
-    --bg-warning: #fef3c7;
+    --color-warning: #38bdf8;
+    --bg-warning: #e0f2fe;
     --primary: #4f46e5;
     --primary-hover: #4338ca;
+    --accent: #38bdf8;
+    --accent-2: #a855f7;
 }
 
 .site-logo {
@@ -54,7 +56,7 @@
 }
 
 body {
-    background-color: var(--bg-primary);
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
     color: var(--text-main);
     overflow: hidden;
 }
@@ -122,7 +124,7 @@ body {
 }
 .sidebar-menu a i { width: 20px; font-size: 1.1rem; }
 .sidebar-menu li.active a, .sidebar-menu a:hover {
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: var(--white);
 }
 

@@ -4,6 +4,17 @@
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
+:root {
+    --primary: #4f46e5;
+    --primary-2: #2563eb;
+    --accent: #38bdf8;
+    --accent-2: #a855f7;
+    --bg-soft: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+}
 .site-logo {
     display: inline-flex;
     align-items: center;
@@ -40,9 +51,9 @@ nav{
     padding: 10px;
     align-items: center;
     justify-content: space-between;
-    background-color: #b3d6f9;
-    border-bottom: #e2e8f0;
-    box-shadow: 0 15px 35px rgba( #5e926d, 0.15);
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.08);
     position: sticky;
     z-index: 999;
 }
@@ -50,7 +61,7 @@ nav .logo{
     color: #333;
 }
 nav .logo span{
-    color: rgb(78, 29, 163);
+    color: var(--primary);
 }
 .hamburger {
   display: none;
@@ -100,7 +111,7 @@ nav ul li a:hover{
 /*Main rubrique*/
 /*Prémier section*/
 .hero{
-    background-color: #e3f9ea;
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
     min-height: 50vh;
     display: flex;
     align-items: center;
@@ -126,7 +137,7 @@ nav ul li a:hover{
     margin-bottom: 20px;
 }
 .hero-text span{
-    color: rgb(78, 29, 163);
+    color: var(--primary);
 }
 .hero-text p{
     font-size: 1.1rem;
@@ -136,33 +147,31 @@ nav ul li a:hover{
 }
 .hero-text .btn1{
     color: #fff;
-    background-color: #5e926d;
+    background: linear-gradient(135deg, var(--primary), var(--primary-2));
     text-decoration: none;
-    border: 1px solid #333;
-    border-radius: 5px;
-    box-shadow: 0 15px 35px rgba(78, 29, 163, 0.15);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
     padding: 9px;
 }
 .hero-text .btn2{
-    color: #5e926d;
+    color: var(--primary);
     background-color: #fff;
     text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 15px 35px rgba(78, 29, 163, 0.15);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
     padding: 9px;
-
 }
 .btn1:hover{
-    color: #5e926d;
-    background: #fff;
-    border: 1px solid #5e926d;
-
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary-2), var(--primary));
+    border: 1px solid transparent;
 }
 .btn2:hover{
     color: #fff;
-    background: #5e926d;
-    border: 1px solid #fff;
+    background: linear-gradient(135deg, var(--primary), var(--primary-2));
+    border: 1px solid transparent;
 }
 .hero-image{
     flex: 1;
@@ -175,7 +184,7 @@ nav ul li a:hover{
 }
 /*Cards for services*/
 .services{
-    background-color: rgb(255, 255, 214);
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
 }
 .texte{
     text-align: center;
@@ -183,7 +192,7 @@ nav ul li a:hover{
 }
 /*Section box*/
 .services{
-    border: 1px solid #111827;
+    border: 1px solid var(--border);
 }
 .card-container{
     display: flex;
@@ -193,23 +202,23 @@ nav ul li a:hover{
     margin: 10px;
 }
 .card{
-    border: 1px solid #f0f0f0;
+    border: 1px solid var(--border);
     width: 280px;
     text-align: center;
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-    background: #fff;
-    padding: 25px;
+    border-radius: 14px;
+    background: var(--bg-card);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
     transition: 0.3s;
     margin-bottom: 10px;
 }
 .users{
     width: 70px;
     height: 70px;
-    background-color: #00a86b;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -235,7 +244,7 @@ nav ul li a:hover{
 .stat{
     width: 70px;
     height: 70px;
-    background-color: #b47d06;
+    background: linear-gradient(135deg, var(--primary-2), var(--accent));
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -249,7 +258,7 @@ nav ul li a:hover{
 .bell{
     width: 70px;
     height: 70px;
-    background-color: #7a05a8;
+    background: linear-gradient(135deg, var(--accent-2), var(--primary));
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -262,7 +271,7 @@ nav ul li a:hover{
 }
 /*Troisième parties*/
 .àpropos{
-    background-color: #f6edff;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
     min-height: 50vh;
     display: flex;
     align-items: center;
@@ -286,7 +295,7 @@ nav ul li a:hover{
 }
 /*Contact partie*/
 .contact-container{
-    background-color: #c9879d;
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
     min-height: 50vh;
     justify-content: space-between;
     display: flex;
@@ -355,9 +364,9 @@ nav ul li a:hover{
 }
 .footer-container{
     display: flex;
-    background-color: #111827;
-    color: #bf8507;
-    text-shadow: #333;
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: #e2e8f0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -422,7 +431,7 @@ header{
     border-radius: 5px;
 }
 .hero{
-    background-color: #e3f9ea;
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
     min-height: 50vh;
     border-radius: 5px;
     margin-top: 10px;

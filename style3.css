@@ -26,9 +26,9 @@
 }
 body{
     min-height: 100vh;
-    background-color: #fff;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
     font-family: 'Courier New', Courier, monospace;
-    color: #333;
+    color: #1e293b;
 
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -42,9 +42,11 @@ nav{
     top: 0;
     position: sticky;
     grid-area: navbar;
-    background-color: #b3d6f9;
-    color: #333;
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+    color: var(--text-main);
     padding: 1em;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.08);
 
     display: flex;
     justify-content: space-between;
@@ -64,35 +66,41 @@ nav ul{
     gap: 20px;
 }
 nav ul li a{
-    color: #fff;
+    color: var(--text-main);
     text-decoration: none;
     font-size: 18px;
 }
 nav ul li a:hover{
-    color:  rgb(65, 35, 142);
+    color: var(--primary-color);
 }
 aside{
     top: 0;
     grid-area: sidebar;
-    background-color: gray;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    border-right: 1px solid var(--border-color);
 }
 main{
     grid-area: main;
 }
 footer{
     grid-area: footer;
-    background: #333;
-    color: #fff;
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: #e2e8f0;
     padding: 2em;
 }
 
 
 :root {
-  --primary-color: #4f46e5; /* Violet/Bleu moderne */
-  --text-main: #1f2937;
-  --text-muted: #4b5563;
-  --bg-light: #f9fafb;
-  --border-color: #e5e7eb;
+  --primary-color: #4f46e5;
+  --primary: #4f46e5;
+  --primary-2: #2563eb;
+  --accent: #38bdf8;
+  --accent-2: #a855f7;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
 }
 
 .help-section {
@@ -140,7 +148,7 @@ footer{
 
 .tab-btn.active {
   color: var(--primary-color);
-  background-color: #eef2ff;
+  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
 }
 
 /* Contenu des onglets */
@@ -158,7 +166,7 @@ footer{
   border-radius: 8px;
   margin-bottom: 1rem;
   overflow: hidden;
-  background: #ffffff;
+  background: var(--bg-card);
   transition: box-shadow 0.2s ease;
 }
 
@@ -206,13 +214,19 @@ footer{
   font-weight: bold;
 }
 footer{
-  color: #bf8507;
-  background: black;
+  color: #e2e8f0;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
 }
 .footer-social{
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  align-items: center;
+  gap: 12px;
+}
+.footer-social a {
+  color: #38bdf8;
+  text-decoration: none;
 }
 .footer-social i{
   font-size: 1rem;

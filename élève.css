@@ -6,16 +6,27 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
+        :root {
+            --primary: #4f46e5;
+            --primary-2: #2563eb;
+            --accent: #38bdf8;
+            --accent-2: #a855f7;
+            --bg-soft: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
         body {
-            background: radial-gradient(circle at 50% 50%, #151233 0%, #0c091f 60%, #05040d 100%);
-            color: #f8fafc;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            color: var(--text-main);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
             display: block;
         }
 
-        /* Lueurs néon de l'image arrière-plan */
         body::before {
             content: "";
             position: fixed;
@@ -23,7 +34,7 @@
             right: -5%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
             filter: blur(80px);
             z-index: -2;
             pointer-events: none;
@@ -36,13 +47,12 @@
             left: -5%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
             filter: blur(80px);
             z-index: -2;
             pointer-events: none;
         }
 
-        /* Formes géométriques 3D flottantes */
         .bg-shapes {
             position: fixed;
             top: 0;
@@ -56,8 +66,8 @@
         .shape {
             position: absolute;
             border-radius: 16px;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(168, 85, 247, 0.15));
-            box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.16), rgba(56, 189, 248, 0.12));
+            box-shadow: 0 0 40px rgba(79, 70, 229, 0.1);
         }
 
         .shape-1 {
@@ -74,8 +84,8 @@
             top: 6%;
             right: 6%;
             transform: rotate(-18deg);
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.15));
-            box-shadow: 0 0 50px rgba(168, 85, 247, 0.2);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(168, 85, 247, 0.12));
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.1);
         }
 
         /* 2. SQUELETTE EN GRILLE (CSS GRID) */
@@ -87,14 +97,13 @@
 
         /* 3. BARRE LATÉRALE (SIDEBAR GLASSMORPHISM) */
         .sidebar {
-            background: rgba(15, 23, 42, 0.45);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
             padding: 2.5rem 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            color: #f8fafc;
         }
 
         .logo-area {
@@ -136,7 +145,7 @@
         }
 
         .nav-link:hover, .nav-link.active {
-            background: rgba(255, 255, 255, 0.08);
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(56, 189, 248, 0.16));
             color: #fff;
             box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
         }
@@ -228,11 +237,9 @@
             align-items: center;
             gap: 1rem;
             padding: 0.9rem 1.5rem;
-            background: rgba(2, 6, 23, 0.72);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.92);
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
             font-size: 0.8rem;
             z-index: 900;
         }
@@ -251,13 +258,11 @@
 
         /* STRUCTURE DES CARTES (GLASSMORPHISM) */
         .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 18px;
             padding: 1.6rem;
-            box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
         }
 
         /* 6. GRILLE DES STATUTS FINANCIERS (KPIs) */
@@ -289,9 +294,9 @@
             font-weight: 600;
             letter-spacing: 0.2px;
         }
-        .badge.warning { background: rgba(234, 179, 8, 0.12); color: #fde047; border: 1px solid rgba(234, 179, 8, 0.25); }
-        .badge.success { background: rgba(34, 197, 94, 0.12); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.25); }
-        .badge.danger { background: rgba(239, 68, 68, 0.12); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.25); }
+        .badge.warning { background: rgba(56, 189, 248, 0.12); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.25); }
+        .badge.success { background: rgba(79, 70, 229, 0.12); color: var(--primary); border: 1px solid rgba(79, 70, 229, 0.25); }
+        .badge.danger { background: rgba(239, 68, 68, 0.12); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.25); }
 
         /* 7. GRILLE DOUBLE COLONNE INFÉRIEURE */
         .content-grid {
@@ -303,14 +308,18 @@
 
         .card-title {
             font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #f1f5f9;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text-main);
+            letter-spacing: -0.2px;
         }
 
         /* 8. TABLEAU FINANCIER STRUCTURÉ */
         .table-container {
             overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: #ffffff;
         }
 
         table {
@@ -320,21 +329,26 @@
         }
 
         th {
-            padding: 1rem;
-            color: #64748b;
-            font-size: 0.85rem;
-            font-weight: 600;
+            padding: 1rem 1.1rem;
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.01);
+            border-bottom: 1px solid var(--border);
+            background: #f8fafc;
         }
 
         td {
-            padding: 1.2rem 1rem;
+            padding: 1rem 1.1rem;
             font-size: 0.95rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            color: #e2e8f0;
+            border-bottom: 1px solid var(--border);
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        tr:nth-child(odd) td {
+            background: #fcfdff;
         }
 
         tr:last-child td {
@@ -353,13 +367,14 @@
             gap: 12px;
             padding: 1.2rem;
             border-radius: 14px;
-            background: rgba(255, 255, 255, 0.01);
-            border-left: 4px solid #38bdf8;
+            background: #f8fafc;
+            border-left: 4px solid var(--accent);
+            border: 1px solid var(--border);
         }
 
         .alert-item.urgent {
             border-left-color: #ef4444;
-            background: rgba(239, 68, 68, 0.02);
+            background: #fef2f2;
         }
 
         .alert-icon {
@@ -369,45 +384,44 @@
             width: 32px;
             height: 32px;
             border-radius: 8px;
-            background: rgba(56, 189, 248, 0.1);
-            color: #38bdf8;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary);
             flex-shrink: 0;
         }
 
         .alert-item.urgent .alert-icon {
             background: rgba(239, 68, 68, 0.1);
-            color: #fca5a5;
+            color: #ef4444;
         }
 
         .alert-content h4 {
             font-size: 0.95rem;
             font-weight: 600;
-            color: #f1f5f9;
+            color: var(--text-main);
             margin-bottom: 0.3rem;
         }
 
         .alert-content p {
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: var(--text-muted);
             line-height: 1.4;
         }
 
         /* --- Bouton Hamburger --- */
         .menu-toggle {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border: none;
             color: #ffffff;
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             cursor: pointer;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 11px 13px;
+            border-radius: 999px;
             position: fixed;
-            top: 8px;
-            left: 15px;
+            top: 16px;
+            left: 16px;
             z-index: 1100;
-            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: none;
         }
 
@@ -416,7 +430,7 @@
         }
 
         .menu-toggle:hover {
-            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 24px rgba(79, 70, 229, 0.28);
         }
 
         /* --- Sidebar desktop/base --- */
@@ -454,6 +468,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                top: 12px;
+                left: 12px;
             }
 
             .sidebar {
@@ -463,8 +479,13 @@
                 width: min(280px, 85vw);
                 height: 100vh;
                 transform: translateX(-100%);
-                box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+                box-shadow: 0 0 35px rgba(15, 23, 42, 0.25);
                 padding: 1.5rem 1rem;
+                border-right: 1px solid rgba(255,255,255,0.08);
+            }
+
+            .logo-area {
+                margin-top: 44px;
             }
 
             .sidebar.active {
