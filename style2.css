@@ -4,42 +4,19 @@
     box-sizing: border-box;
     font-family:'Courier New', Courier, monospace;
 }
+html, body {
+    height: 100%;
+}
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
     color: #1f2937;
-}
-.brand-header {
-    display: flex;
-    align-items: center;
-    padding: 20px 24px 0 24px;
-}
-.site-logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-}
-.site-logo .logo-icon {
-    color: #38bdf8;
-    flex-shrink: 0;
-}
-.site-logo .logo-text {
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    background: linear-gradient(to right, #38bdf8, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.site-logo .logo-accent {
-    color: #a855f7;
+    overflow-x: hidden;
 }
 .login-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     width: 100%;
     align-items: stretch;
 }
@@ -177,12 +154,23 @@ body {
     box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
 }
 @media (max-width: 600px){
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+    body {
+        min-height: 100vh;
+    }
     .login-container{
         display: flex;
         flex-direction: column;
+        min-height: 100vh;
+        width: 100%;
     }
     .form-pannel, .welcome-pannel {
         padding: 28px 20px;
+        min-height: 100vh;
+        width: 100%;
     }
     .welcome-pannel{
         display: none;
